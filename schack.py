@@ -28,7 +28,7 @@ def snäll(spelare,x,y):
             if vit[i] == kordinatär(x,y):
                 return True
 def tom(x,y):
-    if kordinatär == 0:
+    if kordinatär(x,y) == " ":
         return True
 def pjäshitta(pjäs,spelare,x,y):
     if spelare == 0:
@@ -41,8 +41,24 @@ def hota(x,y):
     global hot
     global tur
     if (x+(y*8)) >= 0 and (x+(y*8)) < 64:
-        if not snäll(tur,x,y)
+        if not snäll(tur,x,y):
             hot[x+(8*y)] == 1
+            return True
+        else:
+            return False
+    else:
+        return False
+def raklinje(x,y,fx,fy):
+    loop = True
+    while loop:
+        x = x + fx
+        y = y + fy
+        if tom(tx,ty):
+            if not hota(x,y):
+                loop = False
+        else:
+            hota(x,y)
+            loop = False
 def gå(pjäsx,pjäsy,målx,måly):
     if kordinatär == "*":
         if tur == 0:
@@ -85,9 +101,15 @@ def springare(x,y):
     hota(x-2,y-1)
     hota(x-1,y-2)
 def löpare(x,y):
-    pass
+    raklinje(x,y,1,1)
+    raklinje(x,y,-1,1)
+    raklinje(x,y,1,-1)
+    raklinje(x,y,-1,-1)
 def torn(x,y):
-    pass
+    raklinje(x,y,1,0)
+    raklinje(x,y,0,1)
+    raklinje(x,y,-1,0)
+    raklinje(x,y,0,-1)
 def bondegå(x,y):
     pass
 def bondehota(x,y):
@@ -106,8 +128,8 @@ while game:
     turklar = False
     rörd = False
     while not turklar:
-        pjäsx = drag("")
-        pjäsy = drag("")
+        pjäsx = drag("x")
+        pjäsy = drag("y")
         # drag 
         if pjäshitta("s",tur,pjäsx,pjäsy):
             springare(pjäsx,pjäsy)
@@ -115,8 +137,8 @@ while game:
                 if hot[i] != 0:
                     rörd = True
             while rörd:
-                målx = drag("")
-                måly = drag("")
+                målx = drag("x")
+                måly = drag("y")
                 if fårgå(tur,pjäsx,pjäsy,målx,måly):
                     rörd = False
                     turklar = True
@@ -126,8 +148,8 @@ while game:
                 if hot[i] != 0:
                     rörd = True
             while rörd:
-                målx = drag("")
-                måly = drag("")
+                målx = drag("x")
+                måly = drag("y")
                 if fårgå(tur,pjäsx,pjäsy,målx,måly):
                     rörd = False
                     turklar = True
@@ -137,8 +159,8 @@ while game:
                 if hot[i] != 0:
                     rörd = True
             while rörd:
-                målx = drag("")
-                måly = drag("")
+                målx = drag("x")
+                måly = drag("y")
                 if fårgå(tur,pjäsx,pjäsy,målx,måly):
                     rörd = False
                     turklar = True
@@ -148,8 +170,8 @@ while game:
                 if hot[i] != 0:
                     rörd = True
             while rörd:
-                målx = drag("")
-                måly = drag("")
+                målx = drag("x")
+                måly = drag("y")
                 if fårgå(tur,pjäsx,pjäsy,målx,måly):
                     rörd = False
                     turklar = True
@@ -159,8 +181,8 @@ while game:
                 if hot[i] != 0:
                     rörd = True
             while rörd:
-                målx = drag("")
-                måly = drag("")
+                målx = drag("x")
+                måly = drag("y")
                 if fårgå(tur,pjäsx,pjäsy,målx,måly):
                     rörd = False
                     turklar = True
