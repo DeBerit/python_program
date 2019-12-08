@@ -65,7 +65,7 @@ def hota(x, y):
         return False
 
 
-def raklinje(x, y, fx, fy):
+def raklinje(x, y, fx, fy): # jajhsajjdhs
     loop = True
     while loop:
         x = x + fx
