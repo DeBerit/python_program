@@ -39,8 +39,10 @@ def pjäshitta(pjäs,spelare,x,y):
         return False
 def hota(x,y):
     global hot
+    global tur
     if (x+(y*8)) >= 0 and (x+(y*8)) < 64:
-        hot[x+(8*y)] == 1
+        if not snäll(tur,x,y)
+            hot[x+(8*y)] == 1
 def gå(pjäsx,pjäsy,målx,måly):
     if kordinatär == "*":
         if tur == 0:
@@ -86,7 +88,9 @@ def löpare(x,y):
     pass
 def torn(x,y):
     pass
-def bonde(x,y):
+def bondegå(x,y):
+    pass
+def bondehota(x,y):
     pass
 def dam(x,y):
     pass
@@ -140,6 +144,17 @@ while game:
                     turklar = True
         if pjäshitta("d",tur,pjäsx,pjäsy):
             dam(pjäsx,pjäsy)
+            for i in range(0,64):
+                if hot[i] != 0:
+                    rörd = True
+            while rörd:
+                målx = drag("")
+                måly = drag("")
+                if fårgå(tur,pjäsx,pjäsy,målx,måly):
+                    rörd = False
+                    turklar = True
+        if pjäshitta("b",tur,pjäsx,pjäsy):
+            bondegå(pjäsx,pjäsy)
             for i in range(0,64):
                 if hot[i] != 0:
                     rörd = True
