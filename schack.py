@@ -8,7 +8,7 @@ game = True
 vitvinst = False
 svartvinst = False
 for i in range(0, 64):
-    bräde.extend(" ")
+    bräde.append(" ")
 
 
 def kordinatbli(bli, x, y):
