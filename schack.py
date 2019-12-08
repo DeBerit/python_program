@@ -53,7 +53,7 @@ def raklinje(x,y,fx,fy):
     while loop:
         x = x + fx
         y = y + fy
-        if tom(tx,ty):
+        if tom(x,y):
             if not hota(x,y):
                 loop = False
         else:
@@ -115,7 +115,8 @@ def bondegå(x,y):
 def bondehota(x,y):
     pass
 def dam(x,y):
-    pass
+    torn(x,y)
+    löpare(x,y)
 def kung(x,y):
     pass
 while game:
