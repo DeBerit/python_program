@@ -155,7 +155,14 @@ def dam(x, y):
 
 
 def kung(x, y):
-    pass
+    hota(x+1, y+1)
+    hota(x+1, y-1)
+    hota(x-1, y+1)
+    hota(x-1, y-1)
+    hota(x+1, y)
+    hota(x-1, y)
+    hota(x, y+1)
+    hota(x, y-1)
 
 
 while game:
