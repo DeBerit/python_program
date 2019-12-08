@@ -1,26 +1,27 @@
+# pjäser:
 vit = ["B", "T", "S", "L", "D", "K", "*"]
 svart = ["b", "t", "s", "l", "d", "k", "*"]
-bräde = []
+bräde = [] # kordinatsystemet
 hot = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] # information om punkter i kordinatsystem
 tur = 0
 game = True
 vitvinst = False
 svartvinst = False
-for i in range(0, 64):
+for i in range(0, 64): # Blankt kordinatsystem
     bräde.append(" ")
 
 
-def kordinatbli(bli, x, y):
+def kordinatbli(bli, x, y): # Kordinaten blir en sak
     global bräde
     bräde[x + (y * 8)] = bli
 
 
-def kordinatär(x, y):
+def kordinatär(x, y):# Vad är på på kordinaten
     return bräde[x + (y * 8)]
 
 
-def hotad(x, y):
+def hotad(x, y): 
     if hot[x + (y * 8)] != 0:
         return True
     else:
