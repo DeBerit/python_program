@@ -1,6 +1,6 @@
 maxvalue = 100
-coordinates = [12,-34,15]
-speeds = [12,9,13]
+coordinates = [-100,-100,-100]
+speeds = [6,12,13]
 import turtle
 import time
 def move(dimension):
@@ -26,19 +26,19 @@ wall.pendown()
 for i in range(0,4):
     wall.right(90)
     wall.forward((2*maxvalue)+20)
-wall.goto((maxvalue*4)+20,maxvalue*4+20)
+wall.goto((maxvalue*3)+10,maxvalue*3+10)
 for i in range(0,4):
     wall.right(90)
-    wall.forward((8*maxvalue)+40)
+    wall.forward((6*maxvalue)+20)
     wall.right(135)
-    wall.fd((((3*maxvalue+10)**2)+((maxvalue*3+10)**2))**(1/2))
-    wall.bk((((3*maxvalue+10)**2)+((maxvalue*3+10)**2))**(1/2))
+    wall.fd((((2*maxvalue)**2)+((maxvalue*2)**2))**(1/2))
+    wall.bk((((2*maxvalue)**2)+((maxvalue*2)**2))**(1/2))
     wall.left(135)
 while True:
     ball.clear()
     ball.penup()
     ballsize = (coordinates[2] + maxvalue)+ 10
-    ball.setposition(coordinates[0], coordinates[1]-(ballsize/2))
+    ball.setposition(coordinates[0], coordinates[1]-(ballsize))
     ball.pendown()
     ball.circle(ballsize)
     move(0)
