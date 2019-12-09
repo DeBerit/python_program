@@ -13,7 +13,7 @@ def move(dimension):
     if coordinates[dimension] > maxvalue:
         coordinates[dimension] = maxvalue - (coordinates[dimension]-maxvalue)
         speeds[dimension] = speeds[dimension] * -1
-sscreen = turtle.Screen()
+screen = turtle.Screen()
 ball = turtle.Turtle()
 wall = turtle.Turtle()
 ball.ht()
