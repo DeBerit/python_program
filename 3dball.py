@@ -14,6 +14,7 @@ def move(dimension):
         coordinates[dimension] = maxvalue - (coordinates[dimension]-maxvalue)
         speeds[dimension] = speeds[dimension] * -1
 screen = turtle.Screen()
+screen.screensize(((6*maxvalue)+20),((6*maxvalue)+20))
 ball = turtle.Turtle()
 wall = turtle.Turtle()
 ball.ht()
@@ -44,4 +45,4 @@ while True:
     move(0)
     move(1)
     move(2)
-    time.sleep(0.02)
+    time.sleep(1/61)
