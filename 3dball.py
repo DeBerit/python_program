@@ -38,7 +38,7 @@ for i in range(0,4):
 while True:
     ball.clear()
     ball.penup()
-    ballsize = (coordinates[2] + maxvalue)+ 10  # the ball is bigger the larger it is.
+    ballsize = (coordinates[2] + maxvalue)+ 10  # the ball is bigger the closer it is to the "camera".
     ball.setposition(coordinates[0], coordinates[1]-(ballsize)) # the turtle is moved so that the center of the circle is at the balls position
     ball.pendown()
     ball.circle(ballsize)
