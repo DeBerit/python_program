@@ -2,6 +2,7 @@ maxvalue = 110  # The boundries of the box in which the ball is bouncing
 speeds = [6,12,13]  #how much the ball travels in each direction
 import turtle
 import time
+number_of_balls = 3
 class Ball:
     def __init__(self,x,y,z,vx,vy,vz,size,color):
         self.turtle = turtle.Turtle()
@@ -42,8 +43,10 @@ wall.speed(0)
 wall.penup()
 wall.goto(maxvalue,maxvalue)
 wall.pendown()
-ball1 = Ball(10,-40,-130,12,15,-14,10,"blue")
-ball2 = Ball(0,0,0,12,34,12,10,"red")
+balls = [1,2,3]
+balls[0] = Ball(10,-40,-130,12,15,-14,10,"blue")
+balls[1] = Ball(0,0,0,12,34,12,5,"red")
+balls[2] = Ball(34,-50,-130,32,15,-14,9,"Black")
 for i in range(0,4):    #the small square is drawn.
     wall.right(90)
     wall.forward((2*maxvalue))
@@ -56,8 +59,8 @@ for i in range(0,4):
     wall.bk((((2*maxvalue)**2)+((maxvalue*2)**2))**(1/2))
     wall.left(135)
 while True:
-    ball1.drawball()
-    ball2.drawball()
-    ball1.move()
-    ball2.move()
+    for i in range(0,number_of_balls):
+        balls[i].drawball()
+    for i in range(0,number_of_balls):
+        balls[i].move()
     time.sleep(1/61)    #60fps
